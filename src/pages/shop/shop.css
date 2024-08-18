@@ -1,0 +1,97 @@
+.shopTitle {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 40px;
+}
+
+.products {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* More flexible grid */
+  gap: 20px; /* Space between products */
+  justify-items: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+}
+
+.product {
+  border-radius: 15px;
+  width: 300px;
+  height: auto; /* Allow height to adjust based on content */
+  margin: 20px; /* Reduced margin for better spacing */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9; /* Added background for better visibility */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for effect */
+  transition: transform 0.3s ease-in-out;
+}
+
+.product img {
+  width: 100%; /* Ensure the image fits within the product container */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 15px 15px 0 0; /* Round top corners */
+}
+
+.product .description {
+  text-align: center;
+  padding: 15px; /* Added padding for better text readability */
+}
+
+.product:hover {
+  transform: translateY(-10px); /* Lift the card slightly on hover */
+  cursor: pointer;
+}
+
+.addToCartBttn {
+  background-color: transparent;
+  border: 2px solid rgb(19, 19, 19);
+  min-width: 100px;
+  padding: 5px 10px; /* Simplified padding shorthand */
+  border-radius: 15px;
+  margin-top: 10px; /* Added margin for spacing */
+  transition: background-color 0.3s ease-in, color 0.3s ease-in; /* Smooth transition */
+}
+
+.addToCartBttn:hover {
+  background-color: rgb(19, 19, 19);
+  color: white;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .shopTitle {
+    font-size: 35px;
+    margin-top: 75px;
+  }
+
+  .products {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusted grid */
+  }
+
+  .product {
+    margin: 15px;
+    width: 100%; /* Full width within its grid column */
+  }
+
+  .addToCartBttn {
+    min-width: 90px;
+  }
+}
+
+/* Large devices (desktops, 1024px and up) */
+@media only screen and (min-width: 1025px) {
+  .shopTitle {
+    font-size: 40px;
+    margin-top: 100px;
+  }
+
+  .products {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .product {
+    margin: 20px;
+    max-width: 300px; /* Limit the width on large screens */
+  }
+}
